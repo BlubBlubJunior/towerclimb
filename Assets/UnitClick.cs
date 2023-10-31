@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitClick : MonoBehaviour
@@ -10,6 +8,8 @@ public class UnitClick : MonoBehaviour
     
     public LayerMask clickable;
     public LayerMask ground;
+
+    private UnitAttack _attack;
     void Start()
     {
         mycam = Camera.main;
@@ -34,14 +34,14 @@ public class UnitClick : MonoBehaviour
                    unitselections.Instance.clickselect(hit.collider.gameObject); 
                 }
             }
-            else
+            else 
             {
                 if (!Input.GetKey(KeyCode.LeftShift))
                 {
-                    unitselections.Instance.DeselectAll();
+                    unitselections.Instance.DeselectAll();   
                 }
-                
             }
+            
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -55,6 +55,14 @@ public class UnitClick : MonoBehaviour
                 groundmarker.SetActive(false);
                 groundmarker.SetActive(true);
             }
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                if (hit.collider.CompareTag("Enemy"))
+                {
+                    _attack.attackprefab();
+                }
+            }
+           
         }
         
         
