@@ -1244,7 +1244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac6a4d2bcbeb3a45b93b4d43671317d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  movementSpeed: 12
+  rotationSpeed: 100
+  verticalSpeed: 30
 --- !u!1 &1510693207
 GameObject:
   m_ObjectHideFlags: 0
