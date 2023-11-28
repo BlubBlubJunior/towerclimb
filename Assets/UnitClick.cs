@@ -14,15 +14,13 @@ public class UnitClick : MonoBehaviour
     {
         mycam = Camera.main;
     }
-
-    // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
             Ray ray = mycam.ScreenPointToRay(Input.mousePosition);
-
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, clickable))
             {
                 if (Input.GetKey(KeyCode.LeftShift))

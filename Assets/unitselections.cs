@@ -1,8 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class unitselections : MonoBehaviour
 {
@@ -11,10 +9,12 @@ public class unitselections : MonoBehaviour
 
     private static unitselections _instance;
     public  static  unitselections Instance
+    
+    
+    
     {
         get { return _instance; }
     }
-
     private void Awake()
     {
         if (_instance != null && _instance != this)
