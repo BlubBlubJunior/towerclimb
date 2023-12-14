@@ -1,3 +1,4 @@
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class UnitClick : MonoBehaviour
@@ -8,6 +9,7 @@ public class UnitClick : MonoBehaviour
     
     public LayerMask clickable;
     public LayerMask ground;
+    
 
     private UnitAttack _attack;
     void Start()
@@ -53,14 +55,6 @@ public class UnitClick : MonoBehaviour
                 groundmarker.SetActive(false);
                 groundmarker.SetActive(true);
             }
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-            {
-                if (hit.collider.CompareTag("Enemy"))
-                {
-                    //_attack.attackprefab();
-                }
-            }
-           
         }
         
         
